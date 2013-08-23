@@ -19,7 +19,7 @@ ctrl + t, ctrl + o to generate the code template.
 Features
 --------
 
-[-] Convert a problem statement into a Java class  
+[+] Convert a problem statement into a Java class  
 [-] Customize Java class snippet  
 [-] Autogenerate supplied test case  
 [-] Customize coding view (Single pane, two pane, etc.)  
