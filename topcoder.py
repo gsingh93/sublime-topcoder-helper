@@ -33,9 +33,12 @@ class TopCoderParseCommand(sublime_plugin.TextCommand):
     functionHeaderRegex = re.compile('Method signature:\s+([^\ ]+) ([^\(]+)\((.*)\)')
 
     def run(self, edit):
-        statement = self.parseProblemStatement()
-        self.prepareBuffer()
-        self.insertTemplate(edit, statement)
+        try:
+            statement = self.parseProblemStatement()
+            self.prepareBuffer()
+            self.insertTemplate(edit, statement)
+        except RuntimeError:
+            sublime.error_message("Could not find the class name or function name. Make sure you have correctly copied the question into the buffer.")
 
     def parseProblemStatement(self):
         text = self.view.substr(sublime.Region(0, self.view.size()))
@@ -43,7 +46,7 @@ class TopCoderParseCommand(sublime_plugin.TextCommand):
         functionMatch = self.functionHeaderRegex.search(text)
 
         if (classMatch is None or functionMatch is None):
-            pass  # TODO: handle error
+            raise RuntimeError
 
         return ProblemStatement(classMatch.group(1), functionMatch.group(1),
                                 functionMatch.group(2), functionMatch.group(3))
