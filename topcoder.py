@@ -6,16 +6,18 @@ import sublime_plugin
 from os.path import dirname, realpath, join
 
 
-class TopCoderParseCommand(sublime_plugin.TextCommand):
+PLUGIN_PATH = dirname(realpath(__file__))
 
-    PLUGIN_PATH = dirname(realpath(__file__))
+
+class TopCoderParseCommand(sublime_plugin.TextCommand):
 
     classNameRegex = re.compile('Class:\s+(.+)')
     functionHeaderRegex = re.compile('Method signature:\s+([^\ ]+) ([^\(]+)\((.*)\)')
 
     def __init__(self, view):
+        global PLUGIN_PATH
         super().__init__(view)
-        with open(join(self.PLUGIN_PATH, "java.template")) as f:
+        with open(join(PLUGIN_PATH, "java.template")) as f:
             self.javaTemplate = Template(f.read())
 
     def run(self, edit):
@@ -49,6 +51,15 @@ class TopCoderParseCommand(sublime_plugin.TextCommand):
             className=statement.className,
             functionName=statement.functionName,
             functionHeader=statement.functionHeader))
+
+
+class TopCoderEditJavaTemplateCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        global PLUGIN_PATH
+        path = join(PLUGIN_PATH, "java.template")
+        view = sublime.active_window().open_file(path)
+        view.run_command('set_file_type', {"syntax": "Packages/Java/Java.tmLanguage"})
+
 
 
 class ProblemStatement:
