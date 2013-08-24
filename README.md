@@ -7,7 +7,10 @@ languages may be supported in the future, and pull requests will be accepted.
 Installation
 ------------
 
-TODO
+This plugin can be installed through Package Control (only available on ST3).
+
+Alternatively, you can clone the repository into your Packages directory.
+
 
 Usage
 -----
@@ -41,7 +44,9 @@ Possible future features:
 Customization
 -------------
 
-TODO
+Currently, the only way to customize the code snippet inserted is to modify the
+plugin code (the topcoder.py) file. Future versions will allow easier customization of the template.
+
 
 License
 -------
