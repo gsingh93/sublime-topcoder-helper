@@ -1,0 +1,4 @@
+[
+    { "caption": "TopCoder: Parse", "command": "top_coder_parse" },
+    { "caption": "TopCoder: Edit Java Template", "command": "top_coder_edit_java_template" }
+]

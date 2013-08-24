@@ -16,14 +16,15 @@ Usage
 -----
 
 Copy and paste the entire problem description into the editor. Hit ctrl + p to
-generate the code template.
+generate the code template, or find the "TopCoder: Parse" command in the
+command palette.
 
 
 Features
 --------
 
 [+] Convert a problem statement into a Java class  
-[*] Customize Java class snippet  
+[+] Customize Java class snippet  
 [-] Autogenerate supplied test case  
 [-] Customize coding view (Single pane, two pane, etc.)  
 [-] Prepare code for submission by removing test cases and optionally comments  
@@ -44,9 +45,12 @@ Possible future features:
 Customization
 -------------
 
-Currently, the only way to customize the code snippet inserted is to modify the
-plugin code (the topcoder.py) file. Future versions will allow easier customization of the template.
+To customize the Java template, open the command palette and find the
+"TopCoder: Edit Java Template" command in the command palette. This will open
+a file called java.template.
 
+There are currently three variables whose purpose should be self-explanatory:
+$className, $functionName, and $functionHeader.
 
 License
 -------
