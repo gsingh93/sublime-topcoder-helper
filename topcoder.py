@@ -3,34 +3,20 @@ from string import Template
 import re
 import sublime
 import sublime_plugin
+from os.path import dirname, realpath, join
 
 
 class TopCoderParseCommand(sublime_plugin.TextCommand):
-    javaTemplate = Template(
-"""\n\npublic class $className {
-    public static void main(String args[]) {
-        print(new $className().$functionName());
-    }
 
-    $functionHeader {
-
-    }
-
-    private static void print(Object object) {
-        if (object.getClass().isArray()) {
-            for (int i = 0; i < Array.getLength(object); i++) {
-                System.out.print(Array.get(object, i) + " ");
-            }
-            System.out.println("");
-        } else {
-            System.out.println(object);
-        }
-    }
-}
-""")
+    PLUGIN_PATH = dirname(realpath(__file__))
 
     classNameRegex = re.compile('Class:\s+(.+)')
     functionHeaderRegex = re.compile('Method signature:\s+([^\ ]+) ([^\(]+)\((.*)\)')
+
+    def __init__(self, view):
+        super().__init__(view)
+        with open(join(self.PLUGIN_PATH, "java.template")) as f:
+            self.javaTemplate = Template(f.read())
 
     def run(self, edit):
         try:
@@ -58,6 +44,7 @@ class TopCoderParseCommand(sublime_plugin.TextCommand):
         self.view.sel().clear()
 
     def insertTemplate(self, edit, statement):
+        self.view.insert(edit, self.view.size(), '\n\n')
         self.view.insert(edit, self.view.size(), self.javaTemplate.substitute(
             className=statement.className,
             functionName=statement.functionName,
