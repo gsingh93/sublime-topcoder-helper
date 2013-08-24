@@ -1,0 +1,5 @@
+[
+    {
+        "keys": ["ctrl+p"], "command": "top_coder_parse"
+    }
+]

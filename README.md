@@ -12,8 +12,8 @@ TODO
 Usage
 -----
 
-Copy and paste the entire problem description into the editor. Hit
-ctrl + t, ctrl + o to generate the code template.
+Copy and paste the entire problem description into the editor. Hit ctrl + p to
+generate the code template.
 
 
 Features
