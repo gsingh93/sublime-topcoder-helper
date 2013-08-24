@@ -51,4 +51,4 @@ plugin code (the topcoder.py) file. Future versions will allow easier customizat
 License
 -------
 
-TODO
+MIT License, you can see the license [here](https://github.com/gsingh93/sublime-topcoder-helper/blob/master/LICENSE).
