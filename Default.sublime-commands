@@ -1,4 +1,18 @@
 [
     { "caption": "TopCoder: Parse", "command": "top_coder_parse" },
-    { "caption": "TopCoder: Edit Java Template", "command": "top_coder_edit_java_template" }
+    { "caption": "TopCoder: Edit Java Template", "command": "top_coder_edit_java_template" },
+    {
+        "caption": "Preferences: TopCoder Helper Settings - User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/TopCoderHelper.sublime-settings"
+        }
+    },
+    {
+        "caption": "Preferences: TopCoder Helper Settings - Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/TopCoderHelper/TopCoderHelper.sublime-settings"
+        }
+    }
 ]

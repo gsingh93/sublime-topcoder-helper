@@ -26,7 +26,7 @@ Features
 [+] Convert a problem statement into a Java class  
 [+] Customize Java class snippet  
 [-] Autogenerate supplied test case  
-[*] Customize coding view (Single pane, two pane, etc.)  
+[+] Customize coding view (Single pane, two pane, etc.)  
 [-] Prepare code for submission by removing test cases and optionally comments
 
 
