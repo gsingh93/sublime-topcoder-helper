@@ -26,8 +26,8 @@ Features
 [+] Convert a problem statement into a Java class  
 [+] Customize Java class snippet  
 [-] Autogenerate supplied test case  
-[-] Customize coding view (Single pane, two pane, etc.)  
-[-] Prepare code for submission by removing test cases and optionally comments  
+[*] Customize coding view (Single pane, two pane, etc.)  
+[-] Prepare code for submission by removing test cases and optionally comments
 
 
 Possible future features:
@@ -35,7 +35,7 @@ Possible future features:
 [-] Browse and generate classes for questions on the Problem Archive  
 [-] Autogenerate random test cases using variable constraints  
 [-] C++ support  
-[-] Java support  
+[-] C# support  
 
 [+] = Completed  
 [*] = In progress  
@@ -51,6 +51,11 @@ a file called java.template.
 
 There are currently three variables whose purpose should be self-explanatory:
 $className, $functionName, and $functionHeader.
+
+You have two options when it comes to where the template is generated. If the
+option `use_two_column_layout` is set to `true`, then the template is generated
+in a new group. If this option is set to false, the template is generated in
+same file as the problem statement, and the problem statement is commented out.
 
 License
 -------
