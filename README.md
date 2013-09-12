@@ -15,7 +15,7 @@ Alternatively, you can clone the repository into your Packages directory.
 Usage
 -----
 
-Copy and paste the entire problem description into the editor. Hit ctrl + p to
+Copy and paste the entire problem description into the editor. Hit ctrl + alt + o to
 generate the code template, or find the "TopCoder: Parse" command in the
 command palette.
 

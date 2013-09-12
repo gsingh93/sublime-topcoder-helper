@@ -1,5 +1,5 @@
 [
     {
-        "keys": ["ctrl+p"], "command": "top_coder_parse"
+        "keys": ["ctrl+alt+o"], "command": "top_coder_parse"
     }
 ]
